@@ -87,8 +87,8 @@ def main(argv):
     else:
         stdout, stderr, returncode = transport.run_cmd(' '.join(command))
 
-        sys.stdout.write(stdout)
-        sys.stderr.write(stderr)
+        sys.stdout.write(stdout.decode(sys.stdout.encoding))
+        sys.stderr.write(stderr.decode(sys.stdout.encoding))
 
         sys.exit(returncode)
 
